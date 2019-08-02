@@ -50,18 +50,18 @@
 
 		Now that we have this table, we can plot the points and connect:
 		<div align="center">
-				<embed class="plot" src="d.svg" 
-				script='initPicture(-6,6)
+				<embed width="250" height="250" src="d.svg" 
+				script='initPicture(-5,5)
 				axes()
 				stroke = "blue"
+				marker = "arrow"
+				p = []
+				for (x = -3; x <= 3; x += .1)
+				p[p.length] = [x, abs(x)*2]
+				path(p)
 				marker = "dot"
 				p = []
 				for (x = -2; x <= 2; x += 1)
-				p[p.length] = [x, abs(x)*2]
-				path(p)
-				marker = "arrow"
-				p = []
-				for (x = -2.5; x <= 2.5; x += .5)
 				p[p.length] = [x, abs(x)*2]
 				path(p)'>
 			</div></br></br>
