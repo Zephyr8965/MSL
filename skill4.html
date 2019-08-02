@@ -1,0 +1,51 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+<script type="text/javascript" src="https://www1.chapman.edu/~jipsen/svg/ASCIIsvg.js"></script>
+
+<u>Horizontal Transformations</u><br>
+This is the part that messes with a lot of people. Vertical transformations tend to be easier because they're affecting the Y-value. Affecting the x-value requires a little more thinking. The difficult part is that the movements created in horizontal transformations are reversed. Also, keep in mind that the x-axis moves left and right, not up and down. So, when we affect the x, we're affecting the function to the left and right. Take the following example:<br><br>
+
+<div align="center">`Y=abs(x-1)`</div><br><br>
+
+Subtracting 1 from x in the equation actually increases the x-values by 1. I know this may make your brain want to freak out, but there is some reasoning behind it. If you don't care why, skip the rest of this paragraph. The reason is that we need to get from `abs(x-1)` back to just `abs(x)`. In order to do so, we have to add one to the x's. By getting back to the base function, we can see that the Y-values stay the same.<br><br>
+
+Let's build a table for the example equation above. Remember that we're going to do the opposite of what is in with the x.<br>
+
+<div align="center">
+	`[[x,|,y=abs(x)],[-2,|,2],[-1,|,1],[0,|,0],[1,|,1],[2,|,2]] => [[x,|,y=abs(x-1)],[-2+1,|,2],[-1+1,|,1],[0+1,|,0],[1+1,|,1],[2+1,|,2]] => [[x,|,y=abs(x-1)],[-1,|,2],[0,|,1],[1,|,0],[2,|,1],[3,|,2]]`
+</div><br><br>
+
+Remember, as you get better at this, you don't have to build the tables. The goal is to see the transformation of the points and simply move them, accordingly. So, let's see how we can apply this motion to a graph:
+
+<div style="text-align:center; vertical-align:center">
+	<embed width="250" height="250" src="d.svg" 
+	script='initPicture(-5,5)
+	axes()
+	stroke = "blue"
+	marker = "arrow"
+	p = []
+	for (x = -8; x <= 8; x += .1)
+	p[p.length] = [x, abs(x)]
+	path(p)
+	marker = "dot"
+	p = []
+	for (x = -2; x <= 2; x += 1)
+	p[p.length] = [x, abs(x)]
+	path(p)'>
+	
+	Looking at these two graphs, you can see that the dots on the left are shifted to create the graph to the right.
+
+	<embed width="250" height="250" src="d.svg" 
+	script='initPicture(-5,5)
+	axes()
+	stroke = "blue"
+	marker = "arrow"
+	p = []
+	for (x = -8; x <= 8; x += .1)
+	p[p.length] = [x, abs(x-1)]
+	path(p)
+	marker = "dot"
+	p = []
+	for (x = -1; x <= 3; x += 1)
+	p[p.length] = [x, abs(x-1)]
+	path(p)'>
+</div></br></br>
