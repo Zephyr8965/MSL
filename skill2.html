@@ -1,65 +1,67 @@
-		<u>Vertical Transformations</u></br>
-		Now that we've learned to graph a basic absolute value, we can focus on using transformations to graph more complex versions of that equation. We're going to look at <u>shifting</u> and <u>scaling</u>.<br><br>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+<script type="text/javascript" src="https://www1.chapman.edu/~jipsen/svg/ASCIIsvg.js"></script>
+<u>Vertical Transformations</u></br>
+Now that we've learned to graph a basic absolute value, we can focus on using transformations to graph more complex versions of that equation. We're going to look at <u>shifting</u> and <u>scaling</u>.<br><br>
 
-		<hr><u>Shifting (addition and subtraction)</u><br>
-		Shifting comes from the pattern all numbers follow when we add or subtract them. If you add 3 to a number, it will always go up by 3. This means that, when we add 3 to a function, every point of that function will go up by 3. Take the following function, for example:<br><br>
+<hr><u>Shifting (addition and subtraction)</u><br>
+Shifting comes from the pattern all numbers follow when we add or subtract them. If you add 3 to a number, it will always go up by 3. This means that, when we add 3 to a function, every point of that function will go up by 3. Take the following function, for example:<br><br>
 
-		<div align="center">`Y=abs(x)+3`</div>
+<div align="center">`Y=abs(x)+3`</div>
 
-		Think back to the first skill when we graphed the base function of absolute value (you can click the "Skill 1" button, above if you've forgotten). We built a table of values for that function. We're going to build a table of values for this function, but instead of going through all that math again, we're just going to modify the original table.<br><br>
+Think back to the first skill when we graphed the base function of absolute value (you can click the "Skill 1" button, above if you've forgotten). We built a table of values for that function. We're going to build a table of values for this function, but instead of going through all that math again, we're just going to modify the original table.<br><br>
 
-		<div align="center">
-			`[[x,|,y=abs(x)],[-2,|,2],[-1,|,1],[0,|,0],[1,|,1],[2,|,2]] => [[x,|,y=abs(x)+3],[-2,|,2+3],[-1,|,1+3],[0,|,0+3],[1,|,1+3],[2,|,2+3]] => [[x,|,y=abs(x)+3],[-2,|,5],[-1,|,4],[0,|,3],[1,|,4],[2,|,5]]`
-		</div><br><br>
+<div align="center">
+	`[[x,|,y=abs(x)],[-2,|,2],[-1,|,1],[0,|,0],[1,|,1],[2,|,2]] => [[x,|,y=abs(x)+3],[-2,|,2+3],[-1,|,1+3],[0,|,0+3],[1,|,1+3],[2,|,2+3]] => [[x,|,y=abs(x)+3],[-2,|,5],[-1,|,4],[0,|,3],[1,|,4],[2,|,5]]`
+</div><br><br>
 
-		Now, let's plot those points onto a graph and connect the dots.<br>
-		<div align="center">
-			<embed width="250" height="250" src="d.svg" 
-			script='initPicture(-6,6)
-			axes()
-			stroke = "blue"
-			marker = "dot"
-			p = []
-			for (x = -2; x <= 2; x += 1)
-			p[p.length] = [x, abs(x)+3]
-			path(p)
-			marker = "arrow"
-			p = []
-			for (x = -2.5; x <= 2.5; x += .5)
-			p[p.length] = [x, abs(x)+3]
-			path(p)'>
-		</div></br></br>
+Now, let's plot those points onto a graph and connect the dots.<br>
+<div align="center">
+	<embed width="250" height="250" src="d.svg" 
+	script='initPicture(-6,6)
+	axes()
+	stroke = "blue"
+	marker = "dot"
+	p = []
+	for (x = -2; x <= 2; x += 1)
+	p[p.length] = [x, abs(x)+3]
+	path(p)
+	marker = "arrow"
+	p = []
+	for (x = -2.5; x <= 2.5; x += .5)
+	p[p.length] = [x, abs(x)+3]
+	path(p)'>
+</div></br></br>
 
-		With earlier equations, this may feel like a more complicated way to graph, but it will become a powerful tool for larger and uglier equations. Later in this class, we'll be applying this to quadratic equations, with exponents involved. However, we want to master this method with easier equations first.<hr>
-		
-		<u>Scaling (multiplication and division)</u><br>
-		Scaling happens as a result of multiplication and division. Think about what usually happens to positive numbers when we multiply them. Generally, they get larger. However, with negative numbers, it's the opposite. They get more negative, or smaller. This causes images to be stretched out, or scaled. For now, we'll focus on multiplication and save division for skill 4.<br><br>
+With earlier equations, this may feel like a more complicated way to graph, but it will become a powerful tool for larger and uglier equations. Later in this class, we'll be applying this to quadratic equations, with exponents involved. However, we want to master this method with easier equations first.<hr>
 
-		Take the following function, for example:<br><br>
-		<div align="center">`Y=2abs(x)`</div><br><br>
+<u>Scaling (multiplication and division)</u><br>
+Scaling happens as a result of multiplication and division. Think about what usually happens to positive numbers when we multiply them. Generally, they get larger. However, with negative numbers, it's the opposite. They get more negative, or smaller. This causes images to be stretched out, or scaled. For now, we'll focus on multiplication and save division for skill 4.<br><br>
 
-		To graph this, just like with shifting, we'll take the original table and modify the Y values.<br><br>
+Take the following function, for example:<br><br>
+<div align="center">`Y=2abs(x)`</div><br><br>
 
-		<div align="center">
-			`[[x,|,y=abs(x)],[-2,|,2],[-1,|,1],[0,|,0],[1,|,1],[2,|,2]] => [[x,|,y=2abs(x)],[-2,|,2*2],[-1,|,2*1],[0,|,2*0],[1,|,2*1],[2,|,2*2]] => [[x,|,y=2abs(x)],[-2,|,4],[-1,|,2],[0,|,0],[1,|,2],[2,|,4]]`
-		</div><br><br>
+To graph this, just like with shifting, we'll take the original table and modify the Y values.<br><br>
 
-		Now that we have this table, we can plot the points and connect:
-		<div align="center">
-				<embed width="250" height="250" src="d.svg" 
-				script='initPicture(-5,5)
-				axes()
-				stroke = "blue"
-				marker = "arrow"
-				p = []
-				for (x = -3; x <= 3; x += .1)
-				p[p.length] = [x, abs(x)*2]
-				path(p)
-				marker = "dot"
-				p = []
-				for (x = -2; x <= 2; x += 1)
-				p[p.length] = [x, abs(x)*2]
-				path(p)'>
-			</div></br></br>
+<div align="center">
+	`[[x,|,y=abs(x)],[-2,|,2],[-1,|,1],[0,|,0],[1,|,1],[2,|,2]] => [[x,|,y=2abs(x)],[-2,|,2*2],[-1,|,2*1],[0,|,2*0],[1,|,2*1],[2,|,2*2]] => [[x,|,y=2abs(x)],[-2,|,4],[-1,|,2],[0,|,0],[1,|,2],[2,|,4]]`
+</div><br><br>
 
-			It's useful to note that the x-intercept (the point with a y-value of 0) didn't actually go anywhere. This is because multiplying 0 by anything gives 0. Scaling generally ignores related intercepts.
+Now that we have this table, we can plot the points and connect:
+<div align="center">
+		<embed width="250" height="250" src="d.svg" 
+		script='initPicture(-5,5)
+		axes()
+		stroke = "blue"
+		marker = "arrow"
+		p = []
+		for (x = -3; x <= 3; x += .1)
+		p[p.length] = [x, abs(x)*2]
+		path(p)
+		marker = "dot"
+		p = []
+		for (x = -2; x <= 2; x += 1)
+		p[p.length] = [x, abs(x)*2]
+		path(p)'>
+	</div></br></br>
+
+	It's useful to note that the x-intercept (the point with a y-value of 0) didn't actually go anywhere. This is because multiplying 0 by anything gives 0. Scaling generally ignores related intercepts.
