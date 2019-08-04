@@ -5,6 +5,7 @@ The following is an absolute value function. It is what we call the "Base Functi
 
 Before we begin Transformations, we should first learn to build a graph of the base function. Below is such a graph. We'll talk about how to make that graph next. If you remember graphing lines last year, this should be a quick and easy review.</br>
 
+<div align="center">
 <embed width="150" height="150" src="d.svg" 
 script='initPicture(-2,2)
 axes()
@@ -12,16 +13,18 @@ stroke = "blue"
 p = []
 for (x = -2; x < 2; x += 0.1)
 p[p.length] = [x, abs(x)]
-path(p)
-// there is also a plot("...") shorthand'></br></br>
+path(p)'></br></br>
+</div>
 
 If you remember back to 9th grade when you first began learning to graph a linear function (a line), you needed to build an xy-table. Let's do that for our function. To do this, we'll pick numbers for x, then take the absolute value of them for Y. A good strategy is to take 0 and a couple numbers in the negative and positive directions. Note that I've put those numbers in order from smallest to largest.</br></br>
 
+<div align="center">
 `[[x,|,y=abs(x)],[-2,|,2],[-1,|,1],[0,|,0],[1,|,1],[2,|,2]]`
-</br></br>
+</div></br></br>
 
 Next, we need to plot these points on a graph:</br>
 
+<div align="center">
 <embed width="150" height="150" src="d.svg" 
 script='initPicture(-2,2)
 axes()
@@ -32,6 +35,6 @@ stroke = "clear"
 for (x = -2; x <= 2; x += 1)
 	p[p.length] = [x, abs(x)]
 path(p)'>
-</br></br>
+</div></br></br>
 
 After that, all that's left to do is connect the dots with a line. Take note of the shape you've created. Now that we know this shape, we can move on to transformations.
