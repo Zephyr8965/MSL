@@ -13,7 +13,7 @@ Let's build a table for the example equation above. Remember that we're going to
 
 Remember, as you get better at this, you don't have to build the tables. The goal is to see the transformation of the points and simply move them, accordingly. So, let's see how we can apply this motion to a graph:
 
-<div style="text-align:center; vertical-align:center">
+	<div style="float:left">
 	<embed width="250" height="250" src="d.svg" 
 	script='initPicture(-5,5)
 	axes()
@@ -27,10 +27,11 @@ Remember, as you get better at this, you don't have to build the tables. The goa
 	p = []
 	for (x = -2; x <= 2; x += 1)
 	p[p.length] = [x, abs(x)]
-	path(p)'><br><br>
+	path(p)'></div><br><br>
 	
-	Looking at these two graphs, you can see that the dots on the left are shifted to create the graph to the right.<br><br>
+	Looking at these two graphs, you can see that the dots on the left are shifted to create the graph to the right.
 
+	<div style="float:right">
 	<embed width="250" height="250" src="d.svg" 
 	script='initPicture(-5,5)
 	axes()
@@ -44,5 +45,4 @@ Remember, as you get better at this, you don't have to build the tables. The goa
 	p = []
 	for (x = -1; x <= 3; x += 1)
 	p[p.length] = [x, abs(x-1)]
-	path(p)'>
-</div></br></br>
+	path(p)'></div>
