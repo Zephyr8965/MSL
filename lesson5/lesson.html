@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	body { font-family: Arial;}
+
+	.tab {
+		overflow: hidden;
+		border: 1px solid #ccc;
+		background-color: #f1f1f1;
+	}
+
+	.tab button {
+		background-color: inherit;
+		float: left;
+		border: none;
+		outline: none;
+		padding: 14px 16px;
+		transition: 0.3s;
+	}
+
+	.tab button:hover {
+		background-color: #ddd;
+	}
+
+	.tab button.active {
+		background-color: #ccc;
+	}
+
+	.tabcontent {
+		display: none;
+		padding: 6px 12px;
+		border: 1px solid #ccc;
+		border-top: none;
+		background-color: #aaaaaa;
+		min-width: "device-width";
+		min-height: 90vh;
+		animation: fadeEffect 1s;
+	}
+
+	.skill {
+		border:none;
+	}
+
+	.plot {
+		width:350;
+		height:350;
+	}
+
+	@keyframes fadeEffect {
+		from {opacity: 0;}
+		to {opacity: 1;}
+	}
+</style>
+</head>
+
+<body>
+	<div class="tab">
+		<button id="defaultOpen" class="tablinks" onclick="openContent(event, 'intro')">Intro</button>
+		<button class="tablinks" onclick="openContent(event, 'ext')">External Resource</button>
+		<button class="tablinks" onclick="openContent(event, 'video')">Video</button>
+	</div>
+
+	<div id="intro" class="tabcontent">
+		<u>Piecewise Functions (Level 3)</u></br>
+		Here, we'll look at graphing piecewise functions that may have non-linear components. This skill will conclude the work on graphing piecewise functions.
+		</br></br>
+	</div>
+
+	<div id="lesson" class="tabcontent" display="table">
+		<div id="skillTabs" class="tab">
+			<button class="skillLinks" onclick="openSkill(event, 'skill1')">Skill 1</button>
+			<button class="skillLinks" onclick="openSkill(event, 'skill2')">Skill 2</button>
+			<button class="skillLinks" onclick="openSkill(event, 'skill3')">Skill 3</button>
+			<button class="skillLinks" onclick="openSkill(event, 'skill4')">Skill 4</button>
+		</div>
+		<div id="skill1" class="tabcontent skill" include="https://raw.githubusercontent.com/Zephyr8965/MSL/master/lesson2/skill1.html"></div>
+		<div id="skill2" class="tabcontent skill" include="https://raw.githubusercontent.com/Zephyr8965/MSL/master/lesson2/skill2.html"></div>
+		<div id="skill3" class="tabcontent skill" include="https://raw.githubusercontent.com/Zephyr8965/MSL/master/lesson2/skill3.html"></div>
+		<div id="skill4" class="tabcontent skill" include="https://raw.githubusercontent.com/Zephyr8965/MSL/master/lesson2/skill4.html"></div>
+	</div>
+
+	<div id="ext" class="tabcontent">
+		The following link will take you to an external website, Khan Academy, where you can find additional help on this topic.</br>
+		<a href="https://www.khanacademy.org/math/algebra/one-variable-linear-equations/alg1-one-step-mult-div-equations/a/solving-one-step-multiplication-and-division-equations">Khan Academy Lesson on Solving Single-Step Equations</a>
+	</div>
+
+	<div id="video" class="tabcontent">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/fn5g0RMw-gc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<script>
+		document.getElementById("defaultOpen").click();
+
+		function openContent(evt, content) {
+			var i, tabcontent, tablinks;
+
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(content).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+
+		function openSkill(evt, content) {
+			var i, tabcontent, tablinks;
+
+			tabcontent = document.getElementsByClassName("skill");
+			for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+			}
+
+			tablinks = document.getElementsByClassName("skillLinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(content).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+
+		function includeHTML() {
+			var z, i, elmnt, file, xhttp;
+			z = document.getElementsByTagName("*");
+			for (i = 0; i < z.length; i++) {
+				elmnt = z[i];
+				file = elmnt.getAttribute("include");
+				if (file) {
+					xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4) {
+							if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+							if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+							elmnt.removeAttribute("include");
+							includeHTML();
+						}
+				} 
+				xhttp.open("GET", file, true);
+				xhttp.send();
+				/* Exit the function: */
+				return;
+				}
+			}
+		}
+	</script>
+	<script>
+		includeHTML();
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+	<script type="text/javascript" src="https://www1.chapman.edu/~jipsen/svg/ASCIIsvg.js"></script>
+</body>
+</html>
