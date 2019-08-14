@@ -52,31 +52,20 @@
 		from {opacity: 0;}
 		to {opacity: 1;}
 	}
-
 </style>
 </head>
 
 <body>
 	<div class="tab">
 		<button id="defaultOpen" class="tablinks" onclick="openContent(event, 'intro')">Intro</button>
-		<button class="tablinks" onclick="openContent(event, 'lesson')">Lesson</button>
 		<button class="tablinks" onclick="openContent(event, 'ext')">External Resource</button>
 		<button class="tablinks" onclick="openContent(event, 'video')">Video</button>
 	</div>
 
 	<div id="intro" class="tabcontent">
-		<u>Introduction</u></br>
-		Absolute Value functions are an effective way to introduce a number of concepts we'll need later in math. While these functions are less commonly applied to real life circumstances, they give us a medium to study more advanced methods that are necessary for more important problems. It's best to learn these methods now, with functions that are easier to work with, than to dive into the more difficult ones all at once.
-
-		Our first focus with Absolute Value Functions is to apply transformations. With transformations, we can avoid doing as much math when we need to adjust a function. Rather than taking some complex function and having to plug numbers into it over and over, we can take the simplest form, do the math there, then apply small adjustments to create the transformations. This may seem pointless right now, but that's because an absolute value isn't a difficult operation (compared to some others, like exponents). However, learning this skill now will allow us to apply it to bigger and more difficult functions we'll encounter later.
+		<u>Graph Absolute Value Functions (Level 2)</u></br>
+		Being able to apply multiple transformations to a function can be a powerful skill for graphing increasingly complex functions in an easier and more efficient way.
 		</br></br>
-
-		<u>Skills</u>
-		<ul>
-			<li>Graph Absolute Value (Level 0)</li>
-			<li>Transform Absolute Value (Level 1)</li>
-			<li>Transform Absolute Value (Level 2)</li>
-		</ul></br></br>
 	</div>
 
 	<div id="lesson" class="tabcontent" display="table">
@@ -98,70 +87,66 @@
 	</div>
 
 	<div id="video" class="tabcontent">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/fn5g0RMw-gc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/fn5g0RMw-gc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	</div>
 	<script>
-	document.getElementById("defaultOpen").click();
+		document.getElementById("defaultOpen").click();
 
-	function openContent(evt, content) {
-		var i, tabcontent, tablinks;
+		function openContent(evt, content) {
+			var i, tabcontent, tablinks;
 
-		tabcontent = document.getElementsByClassName("tabcontent");
-		for (i = 0; i < tabcontent.length; i++) {
-		tabcontent[i].style.display = "none";
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(content).style.display = "block";
+			evt.currentTarget.className += " active";
 		}
 
-		tablinks = document.getElementsByClassName("tablinks");
-		for (i = 0; i < tablinks.length; i++) {
-			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		function openSkill(evt, content) {
+			var i, tabcontent, tablinks;
+
+			tabcontent = document.getElementsByClassName("skill");
+			for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+			}
+
+			tablinks = document.getElementsByClassName("skillLinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(content).style.display = "block";
+			evt.currentTarget.className += " active";
 		}
-		document.getElementById(content).style.display = "block";
-		evt.currentTarget.className += " active";
-	}
 
-	function openSkill(evt, content) {
-		var i, tabcontent, tablinks;
-
-		tabcontent = document.getElementsByClassName("skill");
-		for (i = 0; i < tabcontent.length; i++) {
-		tabcontent[i].style.display = "none";
-		}
-
-		tablinks = document.getElementsByClassName("skillLinks");
-		for (i = 0; i < tablinks.length; i++) {
-			tablinks[i].className = tablinks[i].className.replace(" active", "");
-		}
-		document.getElementById(content).style.display = "block";
-		evt.currentTarget.className += " active";
-	}
-
-	function includeHTML() {
-		var z, i, elmnt, file, xhttp;
-		/* Loop through a collection of all HTML elements: */
-		z = document.getElementsByTagName("*");
-		for (i = 0; i < z.length; i++) {
-			elmnt = z[i];
-			/*search for elements with a certain atrribute:*/
-			file = elmnt.getAttribute("include");
-			if (file) {
-				/* Make an HTTP request using the attribute value as the file name: */
-				xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function() {
-					if (this.readyState == 4) {
-						if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-						if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-						/* Remove the attribute, and call this function once more: */
-						elmnt.removeAttribute("include");
-						includeHTML();
-					}
-			} 
-			xhttp.open("GET", file, true);
-			xhttp.send();
-			/* Exit the function: */
-			return;
+		function includeHTML() {
+			var z, i, elmnt, file, xhttp;
+			z = document.getElementsByTagName("*");
+			for (i = 0; i < z.length; i++) {
+				elmnt = z[i];
+				file = elmnt.getAttribute("include");
+				if (file) {
+					xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4) {
+							if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+							if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+							elmnt.removeAttribute("include");
+							includeHTML();
+						}
+				} 
+				xhttp.open("GET", file, true);
+				xhttp.send();
+				/* Exit the function: */
+				return;
+				}
 			}
 		}
-	}
 	</script>
 	<script>
 		includeHTML();
